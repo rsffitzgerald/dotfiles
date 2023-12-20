@@ -159,6 +159,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 # kubectl
 source <(kubectl completion zsh)
 alias ctx='kubectl config current-context'
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
