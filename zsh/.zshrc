@@ -19,43 +19,15 @@ setopt NO_BEEP
 setopt AUTO_CD
 setopt nonomatch
 
-# Color and autocompletion junk and vcs_info for git
-precmd() {
-    vcs_info
-    if [[ -n ${vcs_info_msg_0_} ]]; then
-        PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg[yellow]%}%~%{$fg[magenta]%} ${vcs_info_msg_0_}%f %# %{$reset_color%}% '
-    else
-        PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% '
-    fi
-}
-
 autoload -U compinit promptinit
 compinit
 promptinit
-
-# Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
-autoload -Uz add-zsh-hook vcs_info
-autoload -U colors && colors
-# Enable substitution in the prompt.
-setopt prompt_subst
-
-# Enable checking for (un)staged changes, enabling use of %u and %c
-zstyle ':vcs_info:*' check-for-changes true
-# Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
-zstyle ':vcs_info:*' unstagedstr ' *'
-zstyle ':vcs_info:*' stagedstr ' +'
-# Set the format of the Git information for vcs_info
-zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
-zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 #### Variables ####
 # The only right choice for EDITOR
 export EDITOR='/usr/bin/vi'
 # Still use emacs bindings with editor set to vi
 bindkey -e
-
-# Fix broken ssl lib path bullshit
-# export DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_LIBRARY_PATH
 
 # Bind ctrl u to get the same behavior as in bash
 bindkey \^U backward-kill-line
@@ -68,7 +40,8 @@ export PAGER='less'
 umask 077
 
 #### Aliases ####
-alias ls='ls -GFh'
+#alias ls='ls -GFh'
+alias ls='ls -Fh --color=auto'
 alias grep='grep --color=auto'
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
