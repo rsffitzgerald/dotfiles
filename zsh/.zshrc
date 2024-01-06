@@ -163,7 +163,7 @@ alias ctx='kubectl config current-context'
 # Source p10k based on OS type
 if [ $(uname) = "Darwin" ]; then
     source "/usr/local/share/powerlevel10k/powerlevel10k.zsh-theme"
-elif [ $(uname) = "Linux" || "FreeBSD" ]; then
+elif [ "$(uname)" = "Linux" ] || [ "$(uname)" = "FreeBSD" ]; then
     source "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
 else
     echo "Unsupported operating system: $OSTYPE"
