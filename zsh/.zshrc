@@ -160,8 +160,17 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 source <(kubectl completion zsh)
 alias ctx='kubectl config current-context'
 
+# Source p10k based on OS type
+if [ $(uname) = "Darwin" ]; then
+    source "/usr/local/share/powerlevel10k/powerlevel10k.zsh-theme"
+elif [ $(uname) = "Linux" || "FreeBSD" ]; then
+    source "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
+else
+    echo "Unsupported operating system: $OSTYPE"
+fi
+
 # source ~/powerlevel10k/powerlevel10k.zsh-theme
-source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+# source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
