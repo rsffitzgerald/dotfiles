@@ -50,8 +50,12 @@ alias watch='watch -c'
 alias trm='rm ~/Downloads/*.torrent'
 alias techbooks='cd ~/Documents/ebooks/techbooks'
 
+# project aliases
+alias rsf-server='cd ~/src/ansible/rsf-server'
+
 # mikro 
-alias mikro='mosh rsf@mikro'
+alias mikro='ssh rsf@mikro'
+alias mmikro='mosh rsf@mikro'
 alias rtor='mosh rsf@rtor'
 alias bees='ssh rsf@bees'
 alias freebsd-vm='ssh rsf@freebsd-vm'
@@ -63,7 +67,7 @@ alias scratch='cd /net/mikro/scratch'
 alias tv='cd /net/mikro/mnt/data/tv'
 alias movies='cd /net/mikro/mnt/data/movies'
 alias music='cd /net/mikro/mnt/data/music'
-alias backup='cd /net/mikro/mnt/data/backup'
+alias backup='cd /net/mikro/mnt/data/misc_backup'
 alias flair='cd /net/mikro/misc/game_vids/quake/matches/that_flair_guy'
 alias misc='cd /net/mikro/misc'
 
@@ -76,18 +80,15 @@ alias kub4='ssh ubuntu@kub4'
 
 # non-cluster pis
 alias pi='ssh ubuntu@pi'
-alias pi2='ssh rsf@pi2'
+alias cherry='ssh rsf@cherry'
 
 # remote
-alias rpi='ssh -p 2222 ubuntu@208.110.238.68'
-
-alias rpi2='ssh -p 2223 rsf@73.228.189.253'
-
-alias whatbox='mosh rsf@mercury.whatbox.ca'
+alias rpi='ssh -p 2222 ubuntu@208.110.226.200'
+alias whatbox='mosh rsf@olive.whatbox.ca'
 
 # ubnt
 alias ubnt='ssh ubnt@192.168.0.1'
-alias unifi=' ssh rfitzgerald@192.168.0.237'
+alias unifi=' ssh rfitzgerald@192.168.0.194'
 
 # open vscode by typing code
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
@@ -135,7 +136,7 @@ alias ctx='kubectl config current-context'
 
 # Source p10k based on OS type
 if [ $(uname) = "Darwin" ]; then
-    source "/usr/local/share/powerlevel10k/powerlevel10k.zsh-theme"
+    source "/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme"
 elif [ "$(uname)" = "Linux" ] || [ "$(uname)" = "FreeBSD" ]; then
     source "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
 else
