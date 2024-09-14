@@ -46,6 +46,7 @@ alias grep='grep --color=auto'
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
 alias h='history -i 1'
+alias unrar='unrar e *.rar'
 alias watch='watch -c'
 alias trm='rm ~/Downloads/*.torrent'
 alias techbooks='cd ~/Documents/ebooks/techbooks'
@@ -56,9 +57,6 @@ alias rsf-server='cd ~/src/ansible/rsf-server'
 # mikro 
 alias mikro='ssh rsf@mikro'
 alias mmikro='mosh rsf@mikro'
-alias rtor='mosh rsf@rtor'
-alias bees='ssh rsf@bees'
-alias freebsd-vm='ssh rsf@freebsd-vm'
 
 # Some autofs dir aliases for mikro
 alias anime='cd /net/mikro/mnt/data/anime'
@@ -71,12 +69,6 @@ alias backup='cd /net/mikro/mnt/data/misc_backup'
 alias flair='cd /net/mikro/misc/game_vids/quake/matches/that_flair_guy'
 alias misc='cd /net/mikro/misc'
 
-# kub cluster
-alias kub='ssh ubuntu@kubadmin'
-alias kub1='ssh ubuntu@kub1'
-alias kub2='ssh ubuntu@kub2'
-alias kub3='ssh ubuntu@kub3'
-alias kub4='ssh ubuntu@kub4'
 
 # non-cluster pis
 alias pi='ssh ubuntu@pi'
@@ -104,13 +96,6 @@ function clean_images() {
   docker rmi $(docker images -f "dangling=true" -q)
 }
 
-# AWS programatic CLI stub
-function aws() {
-  export AWS_ACCESS_KEY_ID="XXXXXXXXXX"
-  export AWS_SECRET_ACCESS_KEY="XXXXXXXXXXXXXXXXXXXX"
-  unset  AWS_SESSION_TOKEN
-}
-
 #### Colored man pages ####
 man() {
     env \
@@ -123,9 +108,6 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
 }
-
-# export PATH="/usr/local/opt/icu4c/bin:$PATH"
-# export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
