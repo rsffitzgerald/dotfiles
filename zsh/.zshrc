@@ -76,11 +76,11 @@ alias cherry='ssh rsf@cherry'
 
 # remote
 alias rpi='ssh -p 2222 ubuntu@208.110.226.200'
-alias whatbox='mosh rsf@olive.whatbox.ca'
+alias whatbox='mosh rsf@galileo.whatbox.ca'
 
 # ubnt
 alias ubnt='ssh ubnt@192.168.0.1'
-alias unifi=' ssh rfitzgerald@192.168.0.194'
+alias unifi='ssh rfitzgerald@192.168.0.194'
 
 # open vscode by typing code
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
