@@ -58,6 +58,9 @@ alias rsf-server='cd ~/src/ansible/rsf-server'
 alias mikro='ssh rsf@mikro'
 alias mmikro='mosh rsf@mikro'
 
+# virsh connection 
+export LIBVIRT_DEFAULT_URI=qemu+ssh://mikro/system
+
 # Some autofs dir aliases for mikro
 alias anime='cd /net/mikro/mnt/data/anime'
 alias data='cd /net/mikro/mnt/data'
