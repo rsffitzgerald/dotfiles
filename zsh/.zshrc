@@ -43,7 +43,6 @@ umask 077
 #alias ls='ls -GFh'
 alias ls='ls -Fh --color=auto'
 alias grep='grep --color=auto'
-alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
 alias h='history -i 1'
 alias unrar='unrar e *.rar'
@@ -58,19 +57,24 @@ alias rsf-server='cd ~/src/ansible/rsf-server'
 alias mikro='ssh rsf@mikro'
 alias mmikro='mosh rsf@mikro'
 
+# Proxmox
+alias moxy='ssh root@moxy'
+alias pbs='ssh root@pbs'
+
 # virsh connection 
 export LIBVIRT_DEFAULT_URI=qemu+ssh://mikro/system
 
 # Some autofs dir aliases for mikro
 alias anime='cd /net/mikro/mnt/data/anime'
+alias archive='cd /net/mikro/mnt/data/archive'
+alias backup='cd /net/mikro/mnt/data/misc_backup'
 alias data='cd /net/mikro/mnt/data'
-alias scratch='cd /net/mikro/scratch'
-alias tv='cd /net/mikro/mnt/data/tv'
+alias misc='cd /net/mikro/misc'
 alias movies='cd /net/mikro/mnt/data/movies'
 alias music='cd /net/mikro/mnt/data/music'
-alias backup='cd /net/mikro/mnt/data/misc_backup'
-alias flair='cd /net/mikro/misc/game_vids/quake/matches/that_flair_guy'
-alias misc='cd /net/mikro/misc'
+alias scratch='cd /net/mikro/scratch'
+alias study='cd /net/mikro/mnt/data/study'
+alias tv='cd /net/mikro/mnt/data/tv'
 
 
 # non-cluster pis
