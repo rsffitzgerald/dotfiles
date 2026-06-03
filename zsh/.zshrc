@@ -43,12 +43,12 @@ umask 077
 #alias ls='ls -GFh'
 alias ls='ls -Fh --color=auto'
 alias grep='grep --color=auto'
-alias pip=/usr/local/bin/pip3
 alias h='history -i 1'
-alias unrar='unrar e *.rar'
 alias watch='watch -c'
+alias iina='/Applications/IINA.app/Contents/MacOS/iina-cli'
 alias trm='rm ~/Downloads/*.torrent'
 alias techbooks='cd ~/Documents/ebooks/techbooks'
+alias rsf-server='cd $HOME/src/ansible/rsf-server'
 
 # project aliases
 alias rsf-server='cd ~/src/ansible/rsf-server'
@@ -78,7 +78,7 @@ alias tv='cd /net/mikro/mnt/data/tv'
 
 
 # non-cluster pis
-alias pi='ssh ubuntu@pi'
+alias pi='mosh ubuntu@pi'
 alias cherry='ssh rsf@cherry'
 
 # remote
@@ -122,6 +122,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 # kubectl
 source <(kubectl completion zsh)
 alias ctx='kubectl config current-context'
+alias k='kubectl'
 
 # Source p10k based on OS type
 if [ $(uname) = "Darwin" ]; then
@@ -140,3 +141,8 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
 [[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/rsf/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
