@@ -23,6 +23,10 @@ autoload -U compinit promptinit
 compinit
 promptinit
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 #### Variables ####
 # The only right choice for EDITOR
 export EDITOR='/usr/bin/vi'
