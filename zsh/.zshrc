@@ -43,10 +43,15 @@ export SAVEHIST=100000
 export PAGER='less'
 umask 077
 
+# Set LS colors
+eval "$(gdircolors -b ~/.dircolors)"
+
 #### Aliases ####
-#alias ls='ls -GFh'
-alias ls='ls -Fh --color=auto'
+# alias ls='ls -GFh'
+# alias ls='ls -Fh --color=auto'
 alias grep='grep --color=auto'
+# Use GNU ls for colors
+alias ls='gls --color=auto'
 alias h='history -i 1'
 alias watch='watch -c'
 alias iina='/Applications/IINA.app/Contents/MacOS/iina-cli'
