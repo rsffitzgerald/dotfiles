@@ -88,7 +88,7 @@ alias tv='cd /net/mikro/mnt/data/tv'
 
 # non-cluster pis
 alias pi='mosh ubuntu@pi'
-alias cherry='ssh rsf@cherry'
+# alias cherry='ssh rsf@cherry'
 
 # remote
 alias rpi='ssh -p 2222 ubuntu@208.110.226.200'
